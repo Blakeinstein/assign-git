@@ -1,4 +1,11 @@
 •  What is a gitignore file and what should it include for a Java project? 
-•  What does fast-forward in git mean? 
-•  Why should you have different branches? 
-•  In a project how many remote Git repositories do you usually have? 
+> A gitignore file lists the patterns for files to be excluded from being committed to the repository. For example, to exclude all files under build directory the pattern `build` can be used to exclude the entire build directory. For a java project, excluded patterns may include log files under `.log`, build artifacts like `.jar`, `.zip`,and `.tar.gz`. Other things, that may be excluded are temp files in `.tmp` and context files `.ctxt`. Finally, we may also exclude JVM crash logs of the format `hs_err_pid*`.
+
+•  What does fast-forward in git mean?
+> In git, fast-forwarding implies moving the head pointer to be a direct descendant in a linear history, when compared to the prior position of the head. If this is not possible, in cases such as a non-linear history, merge-conflicts may arise.
+
+•  Why should you have different branches?
+> Usually the master branch represents the latest working/complete version of the project. The idea of using different branches is for active development, for any feature being worked on, a new branch is created. Once the feature is implemented, validated and verified, it is merged to a common branch. This can be the master branch, but can optionally be a development branch used for demos. Once the demo is succesfull and no more iterations are to be made, the master branch is fast-forwarded to the development branch reflecting a release or a Tag.
+
+•  In a project how many remote Git repositories do you usually have?
+> Usually, a git repository has a single named remote repository pointing to some hosted version of the code. 2 versions of a named remote exists, one for push and one for fetch. There are however cases, where you may have multiple remotes, for example in the scenario where you a fork someone's repository, you may have your fork as the `origin` remote, and the original repository as `upstream` or any name of choice, to pull any changes on the original repository to your fork.
